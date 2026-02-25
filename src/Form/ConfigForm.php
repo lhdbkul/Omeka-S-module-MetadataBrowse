@@ -14,8 +14,8 @@ class ConfigForm extends Form
             'type' => 'checkbox',
             'name' => 'metadata_browse_use_globals',
             'options' => [
-                        'label' => 'Use global configuration on admin side', // @translate
-                    ],
+                'label' => 'Use global configuration on admin side', // @translate
+            ],
             'attributes' => [
                 'checked' => $this->globalSettings->get('metadata_browse_use_globals') ? 'checked' : '',
                 'id' => 'metadata-browse-use-globals',

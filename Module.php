@@ -25,7 +25,7 @@ class Module extends AbstractModule
                 Acl::ROLE_SITE_ADMIN,
             ],
             ['MetadataBrowse\Controller\Admin\Index']
-            );
+        );
     }
 
     public function uninstall(ServiceLocatorInterface $serviceLocator)
@@ -238,13 +238,13 @@ class Module extends AbstractModule
             switch ($controllerName) {
                 case 'item':
                     $controllerLabel = 'items';
-                break;
+                    break;
                 case 'item-set':
                     $controllerLabel = 'item sets';
-                break;
+                    break;
                 default:
                     $controllerLabel = $controllerName;
-                break;
+                    break;
             }
             $html = $params['html'];
             $globalSettings = $this->getServiceLocator()->get('Omeka\Settings');
@@ -262,14 +262,14 @@ class Module extends AbstractModule
     protected function literalSearchUrl($url, $routeParams, $propertyId, $searchTarget)
     {
         $searchUrl = $url($routeParams['route'],
-              $routeParams,
-              ['query' => [
-                                     'property[0][property]' => $propertyId,
-                                     'property[0][type]' => 'eq',
-                                     'property[0][text]' => $searchTarget,
-                           ],
-                      ]
-          );
+            $routeParams,
+            ['query' => [
+                'property[0][property]' => $propertyId,
+                'property[0][type]' => 'eq',
+                'property[0][text]' => $searchTarget,
+            ],
+            ]
+        );
 
         return $searchUrl;
     }
@@ -277,14 +277,14 @@ class Module extends AbstractModule
     protected function uriSearchUrl($url, $routeParams, $propertyId, $searchTarget)
     {
         $searchUrl = $url($routeParams['route'],
-              $routeParams,
-                ['query' => [
-                    'property[0][property]' => $propertyId,
-                    'property[0][type]' => 'eq',
-                    'property[0][text]' => $searchTarget,
-                ],
+            $routeParams,
+            ['query' => [
+                'property[0][property]' => $propertyId,
+                'property[0][type]' => 'eq',
+                'property[0][text]' => $searchTarget,
+            ],
             ]
-          );
+        );
 
         return $searchUrl;
     }
@@ -292,14 +292,14 @@ class Module extends AbstractModule
     protected function resourceSearchUrl($url, $routeParams, $propertyId, $searchTarget)
     {
         $searchUrl = $url($routeParams['route'],
-              $routeParams,
+            $routeParams,
             ['query' => [
                 'property[0][property]' => $propertyId,
                 'property[0][type]' => 'res',
                 'property[0][text]' => $searchTarget,
             ],
             ]
-          );
+        );
 
         return $searchUrl;
     }
